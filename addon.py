@@ -19,9 +19,7 @@ class MyPlayer(xbmc.Player):
 
 class MyWindow(xbmcgui.WindowDialog):
   def __init__(self):
-    self.scaleX = self.getWidth()  / 1920.0
-    self.scaleY = self.getHeight() / 1200.0
-    self.addControl(xbmcgui.ControlImage(0, 0, int(1920 * self.scaleX), int(1200 * self.scaleY), img))
+    self.addControl(xbmcgui.ControlImage(0, 0,self.getWidth(),self.getHeight(),img))
   
   def onAction(self, action):
     #xbmc.log(str(action.getId()))
@@ -30,8 +28,8 @@ class MyWindow(xbmcgui.WindowDialog):
       p.stop()
       self.close()
 
-xbmcplugin.endOfDirectory( handle=int( sys.argv[ 1 ] ), succeeded=True )
 p = MyPlayer()
 w = MyWindow()
+xbmcplugin.endOfDirectory( handle=int( sys.argv[ 1 ] ), succeeded=True )
 w.doModal()
 del w
