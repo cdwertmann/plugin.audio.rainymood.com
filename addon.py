@@ -2,7 +2,7 @@ import os,time
 import xbmc,xbmcgui,xbmcplugin
 
 img = xbmc.translatePath( os.path.join( os.getcwd(), 'rain.jpg' ) )
-url = "http://173.193.205.68/audio/RainyMood.ogg"
+url = "http://174.36.223.28/audio1110/classic.ogg"
 #url = "http://images.wikia.com/starwars/images/f/f5/A_little_short.ogg"
 
 class MyPlayer(xbmc.Player):
