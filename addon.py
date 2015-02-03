@@ -10,7 +10,6 @@ class MyPlayer(xbmc.Player):
     self.playNoise()
   
   def onPlayBackEnded(self):
-    time.sleep(3)
     self.playNoise()
   
   def playNoise(self):
