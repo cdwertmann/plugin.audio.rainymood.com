@@ -1,7 +1,8 @@
 import os,time
-import xbmc,xbmcgui,xbmcplugin
+import xbmc,xbmcgui,xbmcplugin,xbmcaddon
 
-img = xbmc.translatePath( os.path.join( os.getcwd(), 'rain.jpg' ) )
+addon = xbmcaddon.Addon()
+img = xbmc.translatePath( os.path.join( addon.getAddonInfo('path'), 'rain.jpg' ) )
 url = "http://174.36.223.28/audio1110/classic.ogg"
 #url = "http://images.wikia.com/starwars/images/f/f5/A_little_short.ogg"
 
@@ -18,8 +19,8 @@ class MyPlayer(xbmc.Player):
 
 class MyWindow(xbmcgui.WindowDialog):
   def __init__(self):
-    self.addControl(xbmcgui.ControlImage(0, 0,self.getWidth(),self.getHeight(),img))
-  
+    self.addControl(xbmcgui.ControlImage(1, 1, 1280, 720, img))
+
   def onAction(self, action):
     #xbmc.log(str(action.getId()))
     # 10 = back, 13 = stop
