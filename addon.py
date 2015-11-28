@@ -4,6 +4,8 @@ import xbmc,xbmcgui,xbmcplugin,xbmcaddon
 addon = xbmcaddon.Addon()
 img = xbmc.translatePath( os.path.join( addon.getAddonInfo('path'), 'rain.jpg' ) )
 url = "http://rainymood.com/audio1110/0.ogg"
+# short ogg file to test loop:
+# url = "http://images.wikia.com/starwars/images/f/f5/A_little_short.ogg"
 
 class MyPlayer(xbmc.Player):
   def __init__(self):
